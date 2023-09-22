@@ -4,6 +4,31 @@
     width: 30%;
 }
 
+.img2_lab1 {
+    position: relative;
+    height: 20%;
+    width: 20%;
+}
+
+.img3_lab1 {
+    position: relative;
+    height: 20%;
+    width: 20%;
+}
+
 .body {
     background-color: gold;
+}
+
+.name {
+    font-size: large;
+    color: brown;
+}
+
+.text_programming {
+    font-size: larger;
+}
+
+.Nenado {
+    font-size: 30px;
 }
