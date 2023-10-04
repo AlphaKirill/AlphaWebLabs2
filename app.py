@@ -189,4 +189,7 @@ def ds3():
 def example():
     name = "Белкин К.В."
     lab_number = "Лабараторная 2"
-    return render_template('example.html', name=name, lab_number=lab_number)
+    rezylt_1 = 11*8
+    rezylt_2 = 8452/793
+    rezylt_3 = 45**8
+    return render_template('example.html', name=name, lab_number=lab_number, rezylt_1=rezylt_1, rezylt_2=rezylt_2,rezylt_3=rezylt_3)
