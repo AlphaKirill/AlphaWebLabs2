@@ -187,4 +187,5 @@ def ds3():
 
 @app.route('/lab2/example')
 def example():
-    return render_template('example.html')
+    name = "Белкин К.В."
+    return render_template('example.html', name=name)
