@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Белкин К.В. {{lab_number}} </title>
+    <title>{% if name %}{{name}},{% else %}Анонимус,{% endif %} {% if lab_number %}{{lab_number}}, {% else %} Ты что все сделал? {% endif %}</title>
     <link rel="stylesheet" href= "{{url_for('static', filename='main.css')}}">
 </head>
 <body>
     <header>
-        WEB - Програмирование, часть 2. {{lab_number}}
+        WEB - Програмирование, часть 2. {% if lab_number %}{{lab_number}}, {% else %} Ты что все сделал? {% endif %}
     </header>
 
     <main>
@@ -18,7 +18,23 @@
     </main>
 
     <footer>
-        &copy; {{name}}, ФБИ-11, 3 Курс, 2023
+        &copy; 
+        {% if name %}
+            {{name}},
+        {% else %}
+            Анонимус,
+        {% endif %}
+         {% if group %}   
+            {{group}},
+        {% else %}
+            Рыцарь ТАЛЧа,
+        {% endif %}
+        {% if kurs %}   
+            {{kurs}},
+        {% else %}
+            Выжившие,
+        {% endif %} 
+        2023
     </footer>
     
 </body>

@@ -19,7 +19,8 @@ def menu():
        НГТУ, ФБ, WEB-программирование, часть 2. Список лабораторных
     </header>
 
-    <a href="/lab1" target="_blank">Лабараторная работа 1</a>
+    <a href="/lab1" target="_blank">Лабараторная работа 1</a><br>
+    <a href="/lab2/example" target="_blank">Лабараторная работа 2</a>
 
     <footer>
         &copy; Кирилл Белкин, ФБИ-11, 3 курс, 2023
@@ -189,7 +190,9 @@ def ds3():
 def example():
     name = "Белкин К.В."
     lab_number = "Лабараторная 2"
+    group = "ФБИ-11"
+    kurs = "Курс 3"
     rezylt_1 = 11*8
     rezylt_2 = 8452/793
     rezylt_3 = 45**8
-    return render_template('example.html', name=name, lab_number=lab_number, rezylt_1=rezylt_1, rezylt_2=rezylt_2,rezylt_3=rezylt_3)
+    return render_template('example.html', name=name, lab_number=lab_number, rezylt_1=rezylt_1, rezylt_2=rezylt_2,rezylt_3=rezylt_3, group=group, kurs=kurs)
