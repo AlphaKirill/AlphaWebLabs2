@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block lab %} Лабараторная 2 {% endblock %}
+
+{% block main %}
+    <h1>Оперское движение</h1>
+    <div>Гланые составляющие:</div>
+
+        <div style="position: absolute; ;width: 20%; height: 20%; left: 12%; top: 14%;">1.Купил Audi</div>
+        <img style="position: absolute; ;width: 20%; height: 20%; left: 0%; top: 16%;" src="{{url_for('static', filename='audi.jpg')}}">
+        <div style="position: absolute; ;width: 20%; height: 20%; left: 20%; top: 14%;">2.Решил газануть...</div>
+        <img style="position: absolute; ;width: 20%; height: 20%; left: 20%; top: 16%;" src="{{url_for('static', filename='300km.jpg')}}">
+        <div style="position: absolute; ;width: 20%; height: 20%; left: 0%; top: 39%;">3.Подрубил соответствующий тречок</div>
+        <img style="position: absolute; ;width: 20%; height: 20%; left: 0%; top: 41%;" src="{{url_for('static', filename='crystal.jpg')}}">
+        <div style="position: absolute; ;width: 20%; height: 20%; left: 20%; top: 39%;">4.Втоталил машину и сам пал.</div>
+        <img style="position: absolute; ;width: 20%; height: 20%; left: 20%; top: 41%;" src="{{url_for('static', filename='crash.jpg')}}">
+        <div style="position: absolute; ;width: 20%; height: 20%; left: 41%; top: 23%;">5.Если не уверен - ненадо!</div>
+        <img style="position: absolute; ;width: 20%; height: 20%; left: 41%; top: 25%;" src="{{url_for('static', filename='danger.jpg')}}">
+        
+    <div style="position: absolute; left: 1%; top: 60%;">6.Будь осторожен!!!</div>
+    
+{% endblock %}

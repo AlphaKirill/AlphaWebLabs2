@@ -222,3 +222,7 @@ def example():
 @app.route('/lab2')
 def lab2():
     return render_template('lab2.html')
+
+@app.route('/lab2/oper')
+def oper():
+    return render_template('oper.html')
