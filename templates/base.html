@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Белкин К.В. {% block lab %}{% endblock %} </title>
+    <link rel="stylesheet" href= "{{url_for('static', filename='main.css')}}">
+</head>
+<body>
+    <header>
+        WEB - Програмирование, часть 2. {{ self.lab() }}
+    </header>
+
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+
+    <footer>
+        &copy; 
+        {% if name %}
+            {{name}},
+        {% else %}
+            Анонимус,
+        {% endif %}
+         {% if group %}   
+            {{group}},
+        {% else %}
+            Рыцари ТАЛЧа,
+        {% endif %}
+        {% if kurs %}   
+            {{kurs}},
+        {% else %}
+            Выживший,
+        {% endif %} 
+        2023
+    </footer>
+    
+</body>
+</html>
