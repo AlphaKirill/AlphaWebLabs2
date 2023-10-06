@@ -195,4 +195,14 @@ def example():
     rezylt_1 = 11*8
     rezylt_2 = 8452/793
     rezylt_3 = 45**8
-    return render_template('example.html', name=name, lab_number=lab_number, rezylt_1=rezylt_1, rezylt_2=rezylt_2,rezylt_3=rezylt_3, group=group, kurs=kurs)
+    fruits = [
+        {'name':'Яблоки', 'price': 100},
+        {'name':'Груши', 'price': 120},
+        {'name':'Виноград', 'price': 80},
+        {'name':'Мандарины', 'price': 95},
+        {'name':'ФейхуА', 'price': 321},
+        {'name':'Апельсины', 'price': 123}
+    ]
+    return render_template('example.html', 
+                           name=name, lab_number=lab_number, rezylt_1=rezylt_1, rezylt_2=rezylt_2,rezylt_3=rezylt_3,
+                            group=group, kurs=kurs, fruits=fruits)
