@@ -15,9 +15,15 @@
         11*28 = {{rezylt_1}}<br>
         8452/793 = {{rezylt_2}}<br>
         45<sup>8</sup>= {{rezylt_3}}<br>
+
         <ul>
             {% for f in fruits %}
-            <li>{{ f.name }}: {{f.price}}&#x20bd </li>
+            <li>{{ f.name }}: {{ f.price }}&#x20bd </li>
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for b in book %}
+            <li>{{ b.autor }}: {{ b.genre }}: {{ b.name }}: {{ b.page }}.стр </li>
             {% endfor %}
         </ul>
     </main>
@@ -32,12 +38,12 @@
          {% if group %}   
             {{group}},
         {% else %}
-            Рыцарь ТАЛЧа,
+            Рыцари ТАЛЧа,
         {% endif %}
         {% if kurs %}   
             {{kurs}},
         {% else %}
-            Выжившие,
+            Выживший,
         {% endif %} 
         2023
     </footer>
