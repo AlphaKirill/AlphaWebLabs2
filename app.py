@@ -20,7 +20,7 @@ def menu():
     </header>
 
     <a href="/lab1" target="_blank">Лабараторная работа 1</a><br>
-    <a href="/lab2/example" target="_blank">Лабараторная работа 2</a>
+    <a href="/lab2" target="_blank">Лабараторная работа 2</a>
 
     <footer>
         &copy; Кирилл Белкин, ФБИ-11, 3 курс, 2023
