@@ -1,12 +1,7 @@
-from flask import Flask, redirect, url_for, render_template
-from lab1 import lab1
-from lab2 import lab2
+from flask import Blueprint, render_template
+lab2 = Blueprint('lab2',__name__)
 
-app = Flask(__name__)
-app.register_blueprint(lab1)
-app.register_blueprint(lab2)
-
-@app.route('/lab2/example')
+@lab2.route('/lab2/example')
 def example():
     name = "Белкин К.В."
     lab_number = "Лабараторная 2"
@@ -39,10 +34,10 @@ def example():
                            name=name, lab_number=lab_number, rezylt_1=rezylt_1, rezylt_2=rezylt_2,rezylt_3=rezylt_3,
                             group=group, kurs=kurs, fruits=fruits, book=book)
 
-@app.route('/lab2')
-def lab2():
+@lab2.route('/lab2')
+def lab_2():
     return render_template('lab2.html')
 
-@app.route('/lab2/oper')
+@lab2.route('/lab2/oper')
 def oper():
     return render_template('oper.html')
