@@ -3,3 +3,7 @@ body {
     color: greenyellow;
     font-size: larger;
 }
+
+.errors {
+    color: red;
+}
