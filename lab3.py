@@ -50,3 +50,36 @@ def pay():
 @lab3.route('/lab3/success')
 def success():
     return render_template('success.html')
+
+
+@lab3.route('/lab3/ticket')
+def ticket():
+    errorst = {}
+    errorst1 = {}
+    usert = request.args.get('usert')
+    aget = request.args.get('aget')
+    bag = request.args.get('bag')
+    travel = request.args.get('travel')
+    transit = request.args.get('transit')
+    DATA = request.args.get('DATA')
+
+    if usert == '':
+        errorst ['usert'] = 'Заполни поле!'
+    if aget == '':
+        errorst ['aget'] = 'Заполни поле!'
+    if transit == '':
+        errorst ['transit'] = 'Заполни поле!'
+    if travel == '':
+        errorst ['travel'] = 'Заполни поле!'
+    if DATA == '':
+        errorst ['DATA'] = 'Заполни поле!'
+    
+    if request.args.get('bag') == 'on':
+        bag = 'Да'
+    else:
+        bag = 'Нет'
+    
+    typet = request.args.get('typet')
+    site = request.args.get('site')
+    return render_template('ticket.html', usert=usert, aget=aget, typet=typet, site=site, bag=bag, travel=travel,
+                           transit=transit,DATA=DATA, errorst=errorst, errorst1=errorst1)

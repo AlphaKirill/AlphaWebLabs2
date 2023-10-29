@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block lab %} Лабараторная 3 {% endblock %}
+
+{% block main %}
+    <h1>Железнодорожный билет:</h1>
+
+    <div>ФИО: {{ usert }} </div>
+    <div>Возраст: {{ aget }} </div>
+    <div>Тип: {{ typet }} </div>
+    <div>Место - полка: {{ site }} </div>
+    <div>Багаж: {{ bag }} </div>
+    <div>Пункт отправления: {{ travel }} </div>
+    <div>Пункт приезда: {{ transit }} </div>
+    <div>Дата поездки: {{ DATA }} </div>
+
+    {% if usert and aget %}
+
+    <h1>Привет, {{ usert }}!</h1>
+    <div>Ваш возраст: {{ aget }}</div>
+
+    <div>
+        <a href="/lab3/ticket">Заполнить информацию заново</a>
+    </div>
+
+    {% else %}
+
+    <h1>Введите данные!</h1>
+
+    <form>
+        <label>Ваше ФИО:</label>
+        <div>
+            <input type = "text" placeholder="Как вас зовут?" name="usert" value="{{usert or '' }}">
+            <span class = 'errors'>{{ errorst.usert }}</span>
+        </div>
+
+        <label>Ваш возраст:</label>
+        <div>
+            <input type = "number" name="aget" value="{{ aget or '' }}" max = 120 min = 18>
+            <span class = 'errors'>{{ errorst.aget }}</span>
+        </div>
+
+        <label>Тип тарифа:</label>
+        <div>
+            <select name="typet">
+                <option value="Детский">Детский</option>
+                <option value="Взрослый">Взрослый</option>
+            </select>
+        </div>
+
+        <label>Место - полка:</label>
+        <select name="site">
+            <option value="Верхняя">Верхняя</option>
+            <option value="Верхняя - боковая">Верхняя - боковая</option>
+            <option value="Нижняя">Нижняя</option>
+            <option value="Нижняя - боковая">Нижняя - боковая</option>
+        </select>
+
+        <label>
+            <input type="checkbox" name="bag">Багаж
+        </label><br>
+
+        <label>Пункт отправления</label>
+        <div>
+            <input type = "text" placeholder="Пункт отправления" name="travel">
+            <span class = 'errors'>{{ errorst.travel }}</span>
+        </div>
+
+        <label>Пункт назначения</label>
+        <div>
+            <input type = "text" placeholder="Пункт назначения" name="transit">
+            <span class = 'errors'>{{ errorst.transit }}</span>
+        </div>
+
+        <label>Дата отправления</label>
+        <div>
+            <input type = "datetime" placeholder="Дата отправления" name="DATA">
+            <span class = 'errors'>{{ errorst.DATA }}</span>
+        </div>
+
+        <div>
+            <button type="submit">Отправить</button>
+        </div>
+
+    </form>
+    {% endif %}
+{% endblock %}
