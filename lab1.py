@@ -22,7 +22,8 @@ def menu():
 
     <a href="/lab1" target="_blank">Лабараторная работа 1</a><br>
     <a href="/lab2" target="_blank">Лабараторная работа 2</a><br>
-    <a href="/lab3/" target="_blank">Лабараторная работа 3</a>
+    <a href="/lab3/" target="_blank">Лабараторная работа 3</a><br>
+    <a href="/lab4/" target="_blank">Лабараторная работа 4</a><br>
 
     <footer>
         &copy; Кирилл Белкин, ФБИ-11, 3 курс, 2023
