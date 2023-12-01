@@ -31,3 +31,20 @@ def login():
         error = 'Неверный логин и/или пароль'
 
     return render_template('login.html', error=error, username=username, password=password, errors=errors)
+
+
+@lab4.route('/lab4/fridge', methods=['GET', 'POST'])
+def fridge():
+    errors = {}
+    if request.method == 'GET':
+        return render_template("fridge.html", errors=errors)
+    temp = request.form.get('temp')
+    if temp == '':
+        errors['temp'] = 'не введена температура'
+    if temp:
+        temp = int(temp)
+        if temp > -1:
+            errors['temp'] = 'не удалось установить температуру - слишком высокое значение'
+        if -12 < temp < -9:
+            errors['temp'] = 'Установлена'
+    return render_template("fridge.html", temp=temp, errors=errors)
