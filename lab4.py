@@ -95,8 +95,12 @@ def cookies():
         return render_template('cookies.html')
 
     color = request.form.get('color')
+    font_size = request.form.get('font-size')
+    background_color = request.form.get('background-color')
+    
     headers = {
         'Set-Cookie': 'color=' + color + '; path=/',
+        'Set-Cookie': 'color=' + color + '; font-size=' + font_size + '; background-color=' + background_color + '; path=/',
         'Location': '/lab4/cookies'
     }
     return '', 303, headers
