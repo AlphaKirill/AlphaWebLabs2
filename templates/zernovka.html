@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 4{% endblock %}
+
+{% block main %}
+    {% if weight and 0 < weight <= 500 %}
+        <h2>Заказ успешно сформирован. Вы заказали зерно: {{ zerno }}.<br> Вес: {{ weight }}. Сумма к оплате: {{ price }}</h2>
+      
+        <button style="left: 48%; position: absolute;">
+            <a style="text-decoration: none; color: black;" href="/lab4/zernovka">закрыть</a>
+        </button>
+        <br>
+        <br>
+    {% else %}
+        <h1>Заказ зерна</h1>
+        <form method="post">
+        <label>Зерно:</label>
+        <select name="zernovka">
+
+            <option type="radio" value="ya">ячмень
+            <option type="radio" value="ov">овёс
+            <option type="radio" value="psh">пшеница
+            <option type="radio" value="ro">рожь
+                
+        </select>
+
+            <label>Вес:</label>
+            <input type="number" id="weight" name="weight" value="{{ weight or '' }}">
+            <span >{{ errors.weight1 }}</span>
+            <span >{{ errors.weight2 }}</span>
+            <span >{{ errors.weight3 }}</span>
+            <button type="submit">Оформить заказ</button>
+
+        </form>
+        <br>
+        <br>
+    {% endif %}
+{% endblock %}

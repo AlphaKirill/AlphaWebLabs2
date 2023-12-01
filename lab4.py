@@ -35,6 +35,7 @@ def login():
 
 @lab4.route('/lab4/fridge', methods=['GET', 'POST'])
 def fridge():
+
     errors = {}
     if request.method == 'GET':
         return render_template("fridge.html", errors=errors)
@@ -48,3 +49,41 @@ def fridge():
         if -12 < temp < -9:
             errors['temp'] = 'Установлена'
     return render_template("fridge.html", temp=temp, errors=errors)
+
+
+@lab4.route('/lab4/zernovka', methods=['GET', 'POST'])
+def zernovka():
+    errors = {}
+    if request.method == 'GET':
+        return render_template("zernovka.html", errors=errors)
+    price = 0
+    selected_option = request.form.get('zernovka')
+    zerno = ''
+    weight = request.form.get('weight')
+    if weight:
+        weight = int(weight)
+        if weight > 500:
+            errors['weight3'] = 'Такого объема сейчас нет в наличии'
+    if weight == '':
+        errors['weight1'] = 'не введен вес'
+    if weight <= 0:
+        errors['weight2'] = 'неверное значение веса'
+    if selected_option == 'ya':
+        price += 12500
+        zerno = 'ячмень'
+    if selected_option == 'ov':
+        price += 8500
+        zerno = 'овёс'
+    if selected_option == 'psh':
+        price += 8700
+        zerno = 'пшеница'
+    if selected_option == 'ro':
+        price += 14000
+        zerno = 'рожь'
+    price = price * weight
+    if weight:
+        if weight > 50:
+            price = price - price * 0.1
+    return render_template("zernovka.html", errors=errors,
+                           selected_option=selected_option, weight=weight,
+                           zerno=zerno, price=price)
