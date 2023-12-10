@@ -1,0 +1,32 @@
+CREATE user kirill_knowledge_base with password 'chel';
+
+ALTER DATABASE knowledge_base_for_kirill OWNER TO kirill_knowledge_base;
+
+GRANT ALL PRIVILEGES ON DATABASE knowledge_base_for_kirill TO kirill_knowledge_base
+
+CREATE TABLE IF NOT EXISTS users (
+	ID SERIAL PRIMARY KEY,
+	username VARCHAR(30) UNIQUE NOT NULL,
+	password VARCHAR(102) NOT NULL
+	);
+
+CREATE TABLE IF NOT EXISTS articles (
+	ID SERIAL PRIMARY KEY,
+	user_id INT NOT NULL,
+	title VARCHAR(50),
+	article_text TEXT,
+	is_favorite bool,
+	is_public bool,
+	likes INT,
+	FOREIGN KEY (user_id) REFERENCES USERS (ID)
+);
+
+SELECT * FROM users;
+
+SELECT * FROM articles;
+
+INSERT INTO users(username, password) VALUES('kirill','krut');
+INSERT INTO users(username, password) VALUES('Temer','neploh');
+INSERT INTO users(username, password) VALUES('Artem','Jhundred');
+INSERT INTO users(username, password) VALUES('KirillKadr','dota2');
+

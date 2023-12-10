@@ -1,0 +1,24 @@
+version: '3.5'
+
+services:
+  postgres:
+    image: postgres:16.1-alpine
+    container_name: AlphaKirill
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: chel
+      POSTGRES_DB: knowledge_base_for_kirill  # Название бд
+    volumes:
+      - pg_data:/var/lib/postgresql/data  # Том для хранения данных
+
+volumes:
+  pg_data:  # Чтобы изменить данные  нужно сделать docker volume rm web-programming-labs-2_pg_data
+            # Для просмотра информации о бд нужно использовать: docker exec -it контейнер psql -U пользователь -d база данных, после \du или \l
+
+
+#CREATE user kirill_knowledge_base with password 'chel';
+#ALTER DATABASE knowledge_base_for_kirill OWNER TO kirill_knowledge_base;
+#GRANT ALL PRIVILEGES ON DATABASE knowledge_base_for_kirill TO kirill_knowledge_base
+
