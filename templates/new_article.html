@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+{% block lab %} Лабараторная 5 {% endblock %}
+{% block main %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>База знаний</title>
+</head>
+<body>
+    <header style="height: 4vw; font-size: 3vw; text-align: left;">
+        Новая заметка
+    </header>
+
+<main>
+    <div>
+    <span class="error">{{ error }}</span>
+    <form method="POST">
+        <input class="name_art" name="title_article" type="text" placeholder="Название статьи">
+        <textarea class="text_article" name="text_article" placeholder="Текст статьи" rows="20"></textarea>
+        <input class="bt_art" type="submit" value="Apply"/>
+    </form>
+    <br>
+    </div>
+
+</main>
+<br>
+<footer style="position: relative; top: 12vw;">
+</footer>
+
+</body>
+</html>
+
+{% endblock %}
