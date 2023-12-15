@@ -7,7 +7,7 @@ GRANT ALL PRIVILEGES ON DATABASE knowledge_base_for_kirill TO kirill_knowledge_b
 CREATE TABLE IF NOT EXISTS users (
 	ID SERIAL PRIMARY KEY,
 	username VARCHAR(30) UNIQUE NOT NULL,
-	password VARCHAR(102) NOT NULL
+	password VARCHAR(300) NOT NULL
 	);
 
 CREATE TABLE IF NOT EXISTS articles (
