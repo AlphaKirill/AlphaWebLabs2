@@ -1,5 +1,5 @@
 from werkzeug.security import check_password_hash, generate_password_hash
-from flask import redirect, render_template, request, Blueprint, session
+from flask import redirect, render_template, request, Blueprint, session, url_for
 import psycopg2
 
 
@@ -204,5 +204,11 @@ def getTitles():
         if not articles:
             return "Not found!"
         return render_template("AllArtShow.html",  article_titles=articles, username=session.get("username"))
+    
+
+@lab5.route("/lab5/logout")
+def logout():
+    session.clear()
+    return redirect(url_for("lab5.main"))
 
     
