@@ -189,4 +189,20 @@ def getArticle(article_id):
         return render_template("ArticleShow.html", article_text=text, article_title=articleBody[0], username=session.get("username"))
 
 
+
+@lab5.route("/lab5/AllShow")
+def getTitles():
+    userID = session.get("id")
+    if userID is not None:
+        conn = dbConnect()
+        cur = conn.cursor()
+
+        cur.execute(f"SELECT title, id FROM articles WHERE user_id = {userID}")
+
+        articles = cur.fetchall()
+        dbClose(cur, conn)
+        if not articles:
+            return "Not found!"
+        return render_template("AllArtShow.html",  article_titles=articles, username=session.get("username"))
+
     
