@@ -21,4 +21,5 @@ volumes:
 #CREATE user kirill_knowledge_base with password 'chel';
 #ALTER DATABASE knowledge_base_for_kirill OWNER TO kirill_knowledge_base;
 #GRANT ALL PRIVILEGES ON DATABASE knowledge_base_for_kirill TO kirill_knowledge_base
+#docker exec -it AlphaKirill  psql -U kirill_knowledge_base with -d knowledge_base_for_kirill
 

@@ -1,3 +1,4 @@
+--5
 CREATE user kirill_knowledge_base with password 'chel';
 
 ALTER DATABASE knowledge_base_for_kirill OWNER TO kirill_knowledge_base;
@@ -30,3 +31,14 @@ INSERT INTO users(username, password) VALUES('Temer','neploh');
 INSERT INTO users(username, password) VALUES('Artem','Jhundred');
 INSERT INTO users(username, password) VALUES('KirillKadr','dota2');
 
+--6
+create user kirill_knowledge_base_orm with password '123'
+create database knowledge_base_orm with owner kirill_knowledge_base_orm;
+
+GRANT ALL PRIVILEGES ON DATABASE knowledge_base_for_kirill TO kirill_knowledge_base
+
+--SELECT usename, usesuper, usecreatedb FROM pg_catalog.pg_user;
+
+--SELECT rolname FROM pg_roles
+
+SELECT SESSION_USER, CURRENT_USER;
