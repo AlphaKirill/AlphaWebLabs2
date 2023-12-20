@@ -11,9 +11,9 @@ def main():
 
 
 courses = [
-    {"name": "c++", "videos": 3, "price": 3000},
-    {"name": "basic", "videos": 30, "price": 0},
-    {"name": "c#", "videos": 8},
+    {"name": "c++", "videos": 3, "price": 3000,  "date": "19.05.2023"},
+    {"name": "basic", "videos": 30, "price": 0, "date": "15.07.2023"},
+    {"name": "c#", "videos": 8, "date": "19.11.2023"},
 ]
 
 

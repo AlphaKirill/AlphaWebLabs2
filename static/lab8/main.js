@@ -17,6 +17,9 @@ function fillCourseList() {
             let tdPrice = document.createElement('td');
             tdPrice.innerText = courses[i].price || 'бесплатно';
 
+            let tdDate = document.createElement('td');
+            tdDate.innerText = courses[i].date;
+
             let editButton = document.createElement('button')
             editButton.innerText = 'редактировать';
             editButton.onclick = function() {
@@ -37,6 +40,7 @@ function fillCourseList() {
             tr.append(tdVideos);
             tr.append(tdPrice);
             tr.append(tdActions);
+            tr.append(tdDate)
 
             tbody.append(tr);
         }
@@ -70,6 +74,7 @@ function addCourse() {
     document.getElementById('name').value = '';
     document.getElementById('videos').value = '';
     document.getElementById('price').value = '';
+    document.getElementById('current-time').value = '';
     showModal();
 }
 
@@ -79,6 +84,7 @@ function sendCourse() {
         name: document.getElementById('name').value,
         videos: document.getElementById('videos').value,
         price: document.getElementById('price').value,
+        date: document.getElementById('current-time').value,
     }
     const url = `/lab8/api/courses/${num}`;
     const method = num ? 'PUT' : 'POST';
