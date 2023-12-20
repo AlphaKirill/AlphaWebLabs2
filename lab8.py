@@ -47,3 +47,11 @@ def put_course(course_num):
         return courses[course_num]
     else:
         return "Out Of Range", 404
+    
+
+@lab8.route('/lab8/api/courses/', methods=['POST'])
+def add_course():
+    course = request.get_json()
+    course['date'] = datetime.now().strftime('%d.%m.%Y')
+    courses.append(course)
+    return {'num': len(courses) - 1}
